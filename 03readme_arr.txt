@@ -22,4 +22,9 @@ arr[5] = 'x';
 arr; // arr变为[1, 2, 3, undefined, undefined, 'x']
 
 
-2)indexOf
+2)indexOf 与String类似
+var arr=[10,20,'30','xyz'];
+arr.indexOf(10);    //元素10的索引为0
+arr.indexOf(20);    //元素20的索引为1
+arr.indexOf(30);    //元素30没有找到，返回-1
+arr.indexOf('30');  //元素'30'的索引为2
