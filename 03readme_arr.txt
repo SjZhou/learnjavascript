@@ -22,4 +22,71 @@ arr[5] = 'x';
 arr; // arr变为[1, 2, 3, undefined, undefined, 'x']
 
 
-2)indexOf
+4)push和pop
+push()向Array的末尾添加若干元素，pop()则把Array的最后一个元素删除掉
+var arr=[1,2];
+arr.push('A','B');// 返回Array新的长度：4
+arr;              //[1,2,'A','B']
+arr.pop();        //pop()返回'B'
+arr;              //[1,2,'A']
+arr.pop();arr.pop();arr.pop(); //连续pop三次
+arr; 			  //[]
+arr.pop();		  //空数组继续pop不会报错，而是返回undefined
+arr;			  //[]
+
+5)unshift 和 shift
+unshift()向Array的头部添加若干元素，shift()则把Array的第一个元素删掉：
+var arr=[1,2];
+arr.unshift('A','B'); //返回Array新的长度：4
+arr;			      //['A','B',1,2]
+arr.shift();          // 'A'
+arr; 				  //['B',1,2]
+arr.shift();arr.shift();arr.shift(); //连续shift 3次
+arr; 				  //[]
+arr.shift();		  //空数组连续shift不会报错，而是返回undefined
+arr; 				  //[]
+
+
+6)sort
+sort()对当前的Array进行排序，会直接修改当前Array的元素，直接调用时，按照默认顺序排序：
+var arr=['B','C','A'];
+arr.sort();
+arr;   //['A','B','C']
+
+7)reverse
+reverse()把整个Array的元素反转：
+var arr=['one','two','three'];
+arr.reverse();
+arr;     //['three','two','one']
+
+8)splice
+splice()方法是修改Array的方法，他可以从制定的索引开始删除若干元素，然后再从该位置添加若干元素：
+var arr=['Microsoft','Apple','Yahoo','AOL','Excite','Oracle'];
+//从索引2开始删除3个元素，然后再添加两个元素
+arr.splice(2,3,'Google','Facebook'); //返回删除的元素['Yahoo','AOL','Excite']
+arr;  					//['Microsoft','Apple','Google','Facebook','Oracle']
+//只删除，不添加
+arr.splice(2,2);;   //['Google','Facebook']
+arr;          //['Microsoft','Apple','Oracle']
+//只添加不删除
+arr.splice(2,0,'Google','Facebook'); //返回[],因为没有删除任何元素
+arr; //['Microsoft','Apple','Google','Facebook','Oracle']
+
+9)concat
+concat()把当前的Array和另一个Array连接起来，并返回一个新的Array：
+var arr=['A','B','C'];
+var added=arr.concat([1,2,3]);
+added;   //['A','B','C',1,2,3,]
+arr;     //['A','B','C']
+
+注：concat()没有修改当前Array，而是返回一个新的Array。
+
+
+
+
+
+
+
+
+
+
